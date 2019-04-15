@@ -1,0 +1,18 @@
+{
+  "name": "avventura-galeone",
+  "version": "1.0.0",
+  "description": "Avventura testuale ambientata in un galeone pirata",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "avventura",
+    "testuale",
+    "galeone",
+    "priati",
+    "gioco"
+  ],
+  "author": "Francesco Bedussi",
+  "license": "ISC"
+}
