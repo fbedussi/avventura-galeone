@@ -11,7 +11,7 @@ function getInput() {
     return new Promise((resolve) => {
         console.log(promptMsg);
         process.stdin.on('data', function (data) {
-            resolve(data);
+            resolve(data.trim());
         });
     })
 }
