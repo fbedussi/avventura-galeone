@@ -35,8 +35,13 @@ function getObject(object) {
     return objects[object];
 }
 
+function playerHasObject(object) {
+    return getObject(object).carried;
+}
+
 module.exports = {
     objects,
     listCurrentSceneObjects,
     getObject,
+    playerHasObject,
 }

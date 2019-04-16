@@ -3,7 +3,7 @@ const { listCurrentSceneObjects } = require('./objects');
 const { getInventary } = require('./inventary');
 const { getCurrentScene } = require('./scenes/sceneManager');
 const { end } = require('./end');
-const { getObject } = require('./objects');
+const { getObject, playerHasObject } = require('./objects');
 
 function pick({parsedInput, rawInput}) {
 	const objectName = parsedInput[1];
@@ -43,14 +43,13 @@ function getTransitiveError(verb) {
 }
 
 function decodeAction({ parsedInput, rawInput }) {
-	if (transitiveVerbs.includes(parsedInput[0]) && !parsedInput[1]) {
-		return getTransitiveError(rawInput[0])
-	}
-
-	// TODO: check is subject is undefined but not object?
 	const actionKey = parsedInput.filter(x => x).join('_');
 	const currentScene = getCurrentScene();
-	return (typeof currentScene.actions[actionKey] === 'function' && currentScene.actions[actionKey])
+	const youDontOwnError = () => `Non hai ${rawInput[1]}`;
+	
+	return transitiveVerbs.includes(parsedInput[0]) && !parsedInput[1] && getTransitiveError(rawInput[0])  
+		|| parsedInput[0] === 'use' && !playerHasObject(parsedInput[1]) && youDontOwnError
+		|| (typeof currentScene.actions[actionKey] === 'function' && currentScene.actions[actionKey])
 		|| currentScene.defaultResponse
 		|| parsedInput[0] === 'pick' && commonActions.pick
 		|| commonActions[actionKey]
