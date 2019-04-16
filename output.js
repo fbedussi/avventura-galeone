@@ -1,5 +1,5 @@
 function output(text) {
-	console.log(text.replace(/[\t]/g, '').replace(/ +/g, ' '));
+	console.log(text.replace(/\n[ \t]+/g, '\n'));
 }
 
 module.exports = output;

@@ -9,12 +9,17 @@ const verbTable = {
 	d: ['basso', 'b'],
 	eat: ['mangia', 'addenta', 'sgranocchia'],
 	use: ['usa'],
+	pick: ['raccogli', 'prendi', 'p'],
 	spread: ['spalma'],
-	watch: ['guarda', 'vedi', 'osserva', 'scruta'],
+	watch: ['guarda', 'vedi', 'osserva', 'scruta', 'g'],
 	inventary: ['inventario', 'i'],
+	exit: ['esci', 'stop', 'quit', 'esc'],
+	yes: ['no'],
+	no: ['no'],
 }
 
 const objectTable = {
+	rope: ['corda', 'fune'],
 	cheese: ['formaggio'],
 };
 

@@ -1,14 +1,26 @@
 let ended = false;
+let won = false;
 
 function getEnded() {
     return ended;
 }
 
-function setEnded(value) {
-    ended = value;
+function getWon() {
+    return won
+}
+
+function setLoose() {
+    ended = true;
+}
+
+function setWon() {
+    ended = true;
+    won = true;
 }
 
 module.exports = {
     getEnded,
-    setEnded,
+    getWon,
+    setLoose,
+    setWon,
 }

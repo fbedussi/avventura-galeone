@@ -1,6 +1,6 @@
 const { setCurrentScene } = require('./sceneManager');
 const { incrementPointsBy } = require('../points');
-const { setEnded } = require('../ended');
+const { setLoose, setWon } = require('../ended');
 const { objects } = require('../objects');
 
 const prisoner = {
@@ -21,7 +21,7 @@ const prisoner = {
         u: () => `Non puoi muoverti, sei legato come un salame!`,
         d: () => `Non puoi muoverti, sei legato come un salame!`,
         eat_cheese: () => {
-            setEnded(true);
+            setLoose();
             return `La misera crosta placa a malapena i morsi della fame. 
             Purtroppo però continui ad essere legato e non riesci a scappare.
             Il tuo destino è ormai segnato.
@@ -32,8 +32,13 @@ const prisoner = {
             incrementPointsBy(10);
             objects.rope = {
                 ...objects.rope,
-                location: prisoner,
-            }
+                location: prisoner.name,
+            };
+            objects.cheese = {
+                ...objects.cheese,
+                carried: false,
+                used: true,
+            };
             prisoner.shortDesc = `Questa è la cella in cui eri tenuto prigioniero.`;
             prisoner.longDesc = `Al centro si erge ancora il sudicio palo a cui eri legato. 
             C'è sempre l'odore di escrementi e lo squittire di ratti, ma ora pensi a quelle bestione con tenera gratitudine.`
@@ -47,6 +52,7 @@ const prisoner = {
                 u: () => `Provi a fare un salto, ma il soffitto è troppo alto da raggiungere. Ad ogni modo modo non sembra esserci nulla di interessante.`,
                 d: () => `Sei già nella stiva, più in basso di così c'è solo l'inifinità degli abissi!`,
                 use_rope: () => {
+                    setWon();
                     incrementPointsBy(20);
                     prisoner.actions = {
                         ...prisoner.actions,
