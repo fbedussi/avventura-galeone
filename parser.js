@@ -8,7 +8,7 @@ const verbTable = {
 	u: ['alto', 'a'],
 	d: ['basso', 'b'],
 	eat: ['mangia', 'addenta', 'sgranocchia'],
-	use: ['usa'],
+	use: ['usa', 'u'],
 	pick: ['raccogli', 'prendi', 'p'],
 	spread: ['spalma'],
 	watch: ['guarda', 'vedi', 'osserva', 'scruta', 'g'],
@@ -16,6 +16,7 @@ const verbTable = {
 	exit: ['esci', 'stop', 'quit', 'esc'],
 	yes: ['no'],
 	no: ['no'],
+	help: ['help', 'aiuto', 'h'],
 }
 
 const objectTable = {
