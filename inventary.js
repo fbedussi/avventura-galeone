@@ -6,7 +6,15 @@ function getInventary() {
         .map((object) => object.label)
         .join(', ')
         ;
-    return possessions.length ? `Al momento possiedi: ${possessions}.` : `Al momento non possiedi nulla.`;
+
+    switch (possessions.length) {
+        case 0:
+            return `Purtroppo al momento non possiedi nulla.`;
+        case 1:
+            return `Al momento possiedi solo ${possessions}.`;
+        default:
+            return `Al momento possiedi: ${possessions}.`;
+    }
 }
 
 module.exports = {

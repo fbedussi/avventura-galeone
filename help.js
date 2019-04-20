@@ -1,8 +1,10 @@
 function help() {
-  return `Per avere una descrizione dettagliata dell'ambiente in cui ti trovi:
+  return `ELENCO COMANDI COMUNI - (tra parentesi l'abbreviazione)
+  
+  Per avere una descrizione dettagliata dell'ambiente in cui ti trovi:
   - guarda (g)
   
-  Comandi per il movimento (tra parentesi l'abbreviazione):
+  Comandi per il movimento:
   - nord (n)
   - sud (s)
   - est (e)
@@ -14,7 +16,7 @@ function help() {
   - inventario (i)
   
   Per prendere un oggetto:
-  - prendi (p) 
+  - prendi (p) + [nome oggetto]
   
   Per usare un oggetto:
   - usa (u) + [nome oggetto]

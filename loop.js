@@ -4,7 +4,7 @@ const { getEnded } = require('./ended');
 const output = require('./output');
 const { end } = require('./end');
 const { incrementTurns } = require('./turns');
-const { parseInput } = require('./parser');
+const { parseInput } = require('./parser/parser');
 const { decodeAction } = require('./decoder');
 
 function loop() {

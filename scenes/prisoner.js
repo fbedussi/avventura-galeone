@@ -28,7 +28,7 @@ const prisoner = {
             Passano lo ore, ritorna la fame che inesorabilmente ti porta alla morte.`
         },
         spread_cheese: () => prisoner.actions.use_cheese(),
-        use_cheese: () => {
+        use_cheese_rope: () => {
             incrementPointsBy(10);
             objects.rope = {
                 ...objects.rope,
@@ -41,7 +41,7 @@ const prisoner = {
             };
             prisoner.shortDesc = `Questa è la cella in cui eri tenuto prigioniero.`;
             prisoner.longDesc = `Al centro si erge ancora il sudicio palo a cui eri legato. 
-            C'è sempre l'odore di escrementi e lo squittire di ratti, ma ora pensi a quelle bestione con tenera gratitudine.`
+            C'è sempre l'odore di escrementi e lo squittire di ratti, ma ora pensi a quelle bestioline con tenera gratitudine.`
             prisoner.actions = {
                 ...prisoner.actions,
                 n: () => `Sbatti contro la lurida parete della cella.`,
@@ -51,7 +51,7 @@ const prisoner = {
                 L'unica apertura è lo spioncino da cui i tuoi carcerieri ti passavano i tuoi magri pasti.`,
                 u: () => `Provi a fare un salto, ma il soffitto è troppo alto da raggiungere. Ad ogni modo modo non sembra esserci nulla di interessante.`,
                 d: () => `Sei già nella stiva, più in basso di così c'è solo l'inifinità degli abissi!`,
-                use_rope: () => {
+                use_rope_peephole: () => {
                     setWon();
                     incrementPointsBy(20);
                     prisoner.actions = {

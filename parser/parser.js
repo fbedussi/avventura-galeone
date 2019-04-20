@@ -1,4 +1,4 @@
-const stopWords = ['il', 'la', 'un', 'una', 'uno', 'di', 'a', 'da', 'in', 'con', 'su', 'per', 'tra', 'fra'];
+const stopWords = require('./stopWords');
 
 const verbTable = {
 	n: ['nord', 'n'],
@@ -20,11 +20,11 @@ const verbTable = {
 }
 
 const objectTable = {
-	rope: ['corda', 'fune'],
+	rope: ['corda', 'fune', 'corde'],
 	cheese: ['formaggio'],
+	door: ['porta'],
+	peephole: ['spioncino'],
 };
-
-const complementTable = {};
 
 function decodeTerm(term = '', table) {
 	return Object.keys(table).find((key) => table[key].includes(term.trim()));
@@ -42,7 +42,7 @@ function parseInput(input) {
 		parsedInput: [
 			decodeTerm(rawVerb, verbTable),
 			decodeTerm(rawObject, objectTable),
-			decodeTerm(rawComplement, complementTable)
+			decodeTerm(rawComplement, objectTable)
 		],
 		rawInput,
 	};

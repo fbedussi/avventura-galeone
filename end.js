@@ -1,7 +1,6 @@
 const {getTurns} = require('./turns');
 const { getPoints } = require('./points');
 const output = require('./output');
-const turns = getTurns();
 const { getWon } = require('./ended');
 
 const endingMessages = {
@@ -17,7 +16,7 @@ const endingMessages = {
 
 function end() {
 	const points = getPoints();
-	output(`Hai giocato ${turns} turni.`);
+	output(`Hai giocato ${getTurns()} turni.`);
 	if (getWon()) {
 		output(`Complimenti hai vinto, e hai totalizzato ${points} punti!`);
 	} else {
