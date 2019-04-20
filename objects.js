@@ -24,9 +24,9 @@ const objects = {
     },
     door: {
         location: 'prisoner',
-        description: `Una porta di ferro. Sembra decisamente resistente. 
+        description: `E Una porta di ferro. Sembra decisamente resistente. 
         Al centro c'è uno spioncino che i tuoi carcerieri usavano per passarti il cibo. Se di cibo si può parlare.
-        Ma ovviamente è troppo piccolo per poterci passare.`,
+        Ma ovviamente è troppo piccolo perché tu ci possa passare.`,
         show: false,
     }
 }

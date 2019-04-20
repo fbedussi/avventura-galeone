@@ -30,6 +30,9 @@ function pick({ parsedInput, rawInput }) {
 
 function checkWatchAction(parsedInput) {
   const object = getObject(parsedInput[1]);
+  if (parsedInput[0] !== 'watch') {
+    return false;
+  }
   if (parsedInput[1] && object && object.description) {
     return () => object.description;
   }
