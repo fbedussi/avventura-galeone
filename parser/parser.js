@@ -24,6 +24,9 @@ const objectTable = {
 	cheese: ['formaggio'],
 	door: ['porta'],
 	peephole: ['spioncino'],
+	jailer: ['carceriere', 'secondino'],
+	pirate: ['pirata', 'corsaro', 'bucaniere'],
+	key: ['chiave', 'chiavi']
 };
 
 function decodeTerm(term = '', table) {

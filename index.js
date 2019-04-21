@@ -8,7 +8,7 @@ const output = require('./output');
 
 function init() {
   output(help());
-  setCurrentScene(scenes.prisoner);
+  output(setCurrentScene(scenes.prisoner));
   input.init();
   loop();
 }

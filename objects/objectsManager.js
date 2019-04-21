@@ -26,8 +26,9 @@ function getObject(term) {
     return objects.find(object => object.term === term && (object.carried || object.location == location.name));
 }
 
-function playerHasObject(object) {
-    return !!getObject(object);
+function playerHasObject(objectName) {
+    const object = getObject(objectName); 
+    return object && object.carried;
 }
 
 function setObject(updatedObject) {

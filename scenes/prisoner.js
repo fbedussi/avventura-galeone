@@ -34,6 +34,7 @@ const prisoner = {
                 id: 'rope-prisoner',
                 show: true,
                 actionable: true,
+                description: null,
             });
             setObject({
                 id: 'cheese-prisoner',
@@ -46,17 +47,16 @@ const prisoner = {
                 ...prisoner.actions,
                 n: () => `Sbatti contro la lurida parete della cella.`,
                 s: () => `Sbatti contro la lurida parete della cella.`,
-                e: () => `Sbatti contro la lurida parete della cella.`,
-                o: () => `Arrivi ad una pesante porta di metallo che ti sbarra la via. 
+                e: () => `Arrivi ad una pesante porta di metallo che ti sbarra la via. 
                 L'unica apertura è lo spioncino da cui i tuoi carcerieri ti passavano i tuoi magri pasti.`,
+                o: () => `Sbatti contro la lurida parete della cella.`,
                 u: () => `Provi a fare un salto, ma il soffitto è troppo alto da raggiungere. Ad ogni modo modo non sembra esserci nulla di interessante.`,
                 d: () => `Sei già nella stiva, più in basso di così c'è solo l'inifinità degli abissi!`,
                 use_rope_peephole: () => {
-                    setWon();
                     incrementPointsBy(20);
                     prisoner.actions = {
                         ...prisoner.actions,
-                        o: () => setCurrentScene(/* deadJailer */),
+                        e: () => setCurrentScene('jailer'),
                     }
                     return `Infili la corda che ti teneva legato nello spioncino e riesci a tirare il chiavistello che chiude la porta.
                     Finalmente sei libero!`;

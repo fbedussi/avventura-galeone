@@ -29,17 +29,25 @@ function pick({ parsedInput, rawInput }) {
   return `Hai preso ${object.label}`;
 }
 
-function checkWatchAction(parsedInput) {
+function checkWatchAction(parsedInput, rawInput) {
   const object = getObject(parsedInput[1]);
+  
+  // no watch action
   if (parsedInput[0] !== 'watch') {
     return false;
   }
-  if (parsedInput[1] && object && object.description) {
-    return () => object.description;
+
+  // watch a know object
+  if (object) {
+    return () => object.description || object.label;
   }
-  if (parsedInput[1] && object) {
-    return () => object.label;
+
+  // watch an unknown object
+  if (!object && rawInput[1]) {
+    return () => `Qui non ne vedo`;
   }
+
+  // watch scene
   if (!parsedInput[1] && !parsedInput[2]) {
     return () => getCurrentScene().longDesc + listCurrentSceneObjects();
   }
@@ -70,7 +78,7 @@ function checkTransitiveError(parsedInput, rawInput) {
     getTransitiveError(rawInput[0]);
 }
 
-function checkYouDontKnowError(parsedInput, rawInput) {
+function checkYouDontOwnError(parsedInput, rawInput) {
   const getYouDontOwnError = () => `Non hai ${rawInput[1]}`;
 
   return parsedInput[0] === 'use' &&
@@ -138,10 +146,10 @@ function decodeAction({ parsedInput, rawInput }) {
   // To be invoked by `output` in the loop 
   return (
     checkTransitiveError(parsedInput, rawInput) ||
-    checkYouDontKnowError(parsedInput, rawInput) ||
-    checkWatchAction(parsedInput) ||
-    checkForbiddenActionError(parsedInput) ||
+    checkYouDontOwnError(parsedInput, rawInput) ||
     checkSceneAction(parsedInput) ||
+    checkWatchAction(parsedInput, rawInput) ||
+    checkForbiddenActionError(parsedInput) ||
     checkPickAction(parsedInput) ||
     commonActions[parsedInput[0]] ||
     checkUnfruifulAction(parsedInput) ||

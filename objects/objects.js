@@ -23,6 +23,7 @@ const objects = [
         location: 'prisoner',
         id: 'rope-prisoner',
         label: 'la corda che ti teneva legato',
+        description: `è una corda molto robusta che ti cinge la vita`,
         show: false,
         actionable: false,
         actions: ['use', 'insert'],
@@ -31,12 +32,29 @@ const objects = [
     {
         term: 'door',
         location: 'prisoner',
-        description: `È Una porta di ferro. Sembra decisamente resistente. 
+        description: `È una porta di ferro. Sembra decisamente resistente. 
         Al centro c'è uno spioncino che i tuoi carcerieri usavano per passarti il cibo. Se di cibo si può parlare.
         Ma ovviamente è troppo piccolo perché tu ci possa passare.`,
         show: false,
         actionable: false,
-    }
+    },
+    {
+        term: 'jailer',
+        id: 'jailer-jailer',
+        location: 'jailer',
+        label: 'il carceriere stecchito',
+        description: `È accasciato a terra. La bocca contorta in una smorfia di dolore.
+        È vestito solo con dei luridi calzoncini mezzi strappati.
+        Alla vita ha una rozza cintura, fatta con un pezzo di corda, da cui pende un mazzo di chiavi`,
+        show: true,
+    },
+    {
+        term: 'key',
+        location: 'jailer',
+        id: 'keys-jailer',
+        label: 'un mazzo di chiavi unte',
+        description: `Sono delle chiavi mezze arruginite e un po' storte, chissà cosa aprono.`,
+    },
 ]
 
 module.exports = objects;
