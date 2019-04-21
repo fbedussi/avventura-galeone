@@ -1,8 +1,7 @@
-const { objects } = require('./objects');
+const { getCarriedObjects } = require('./objects/objectsManager');
 
 function getInventary() {
-    const possessions = Object.values(objects)
-        .filter((object) => object.carried)
+    const possessions = getCarriedObjects()
         .map((object) => object.label)
         ;
 

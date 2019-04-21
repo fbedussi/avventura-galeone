@@ -2,20 +2,20 @@ const {
   getDefaultVoidResponse,
   getNoPasingResponse
 } = require("./defaultResponses");
-const { listCurrentSceneObjects } = require("./objects");
 const { getInventary } = require("./inventary");
 const { getCurrentScene } = require("./scenes/sceneManager");
 const { end } = require("./end");
-const { getObject, playerHasObject } = require("./objects");
+const { getObject, playerHasObject, listCurrentSceneObjects } = require("./objects/objectsManager");
 const { help } = require("./help");
 const { getRandomArrayItem } = require('./utils');
 
 function pick({ parsedInput, rawInput }) {
+  const currentLocation = getCurrentScene();
   const objectName = parsedInput[1];
   const rawObjectName = rawInput[1];
   const object = getObject(objectName);
 
-  if (!object || object.location !== getCurrentScene().name) {
+  if (!object || object.location !== currentLocation.name) {
     return `Non c'è nessun ${rawObjectName} qui.`;
   }
 
@@ -35,6 +35,9 @@ function checkWatchAction(parsedInput) {
   }
   if (parsedInput[1] && object && object.description) {
     return () => object.description;
+  }
+  if (parsedInput[1] && object) {
+    return () => object.label;
   }
   if (!parsedInput[1] && !parsedInput[2]) {
     return () => getCurrentScene().longDesc + listCurrentSceneObjects();
@@ -75,7 +78,8 @@ function checkYouDontKnowError(parsedInput, rawInput) {
 }
 
 
-function getForbiddenActionError() {pick
+function getForbiddenActionError() {
+  pick
   const forbiddenActionErrors = [
     `Ma sei matto?`,
     `Non è possibile`,
@@ -84,14 +88,14 @@ function getForbiddenActionError() {pick
     `Fossi matto`,
     `Magari fosse possibile!`,
   ]
-  
+
   return getRandomArrayItem(forbiddenActionErrors);
 }
 
 function checkForbiddenActionError(parsedInput) {
   const action = parsedInput[0];
-  const object = getObject(parsedInput[1]); 
-  const isNotCommonAction = !Object.keys(commonActions).includes(action); 
+  const object = getObject(parsedInput[1]);
+  const isNotCommonAction = !Object.keys(commonActions).includes(action);
   return parsedInput[1] &&
     object &&
     isNotCommonAction &&
@@ -109,13 +113,14 @@ function checkSceneAction(parsedInput) {
 }
 
 function checkPickAction(parsedInput) {
-  return parsedInput[0] === "pick" && commonActions.pick 
+  return parsedInput[0] === "pick" && commonActions.pick
 }
 
 function getUnfruitfulAction() {
   const unfruifulActionErrors = [
     `Non è possibile`,
     `Non funziona`,
+    'Per fare cosa?',
     `Non succede nulla`,
     `E niente... non succede niente`,
   ];

@@ -1,7 +1,7 @@
 const { setCurrentScene } = require('./sceneManager');
 const { incrementPointsBy } = require('../points');
 const { setLoose, setWon } = require('../ended');
-const { objects } = require('../objects');
+const { setObject } = require('../objects/objectsManager');
 
 const prisoner = {
     name: 'prisoner',
@@ -30,15 +30,15 @@ const prisoner = {
         spread_cheese: () => prisoner.actions.use_cheese(),
         use_cheese_rope: () => {
             incrementPointsBy(10);
-            objects.rope = {
-                ...objects.rope,
-                location: prisoner.name,
-            };
-            objects.cheese = {
-                ...objects.cheese,
+            setObject({
+                id: 'rope-prisoner',
+                show: true,
+                actionable: true,
+            });
+            setObject({
+                id: 'cheese-prisoner',
                 carried: false,
-                used: true,
-            };
+            });
             prisoner.shortDesc = `Questa è la cella in cui eri tenuto prigioniero.`;
             prisoner.longDesc = `Al centro si erge ancora il sudicio palo a cui eri legato. 
             C'è sempre l'odore di escrementi e lo squittire di ratti, ma ora pensi a quelle bestioline con tenera gratitudine.`
