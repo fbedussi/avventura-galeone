@@ -24,6 +24,7 @@ function pick({ parsedInput, rawInput }) {
   }
 
   object.carried = true;
+  object.location = null;
 
   return `Hai preso ${object.label}`;
 }
