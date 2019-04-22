@@ -19,6 +19,15 @@ const objects = [
         pickable: true,
     },
     {
+        term: 'mirror',
+        id: 'mirror-prisoner',
+        carried: true,
+        show: true,
+        pickable: true,
+        label: 'un frammento di specchio',
+        actions: ['use', 'insert'],
+    },
+    {
         term: 'rope',
         location: 'prisoner',
         id: 'rope-prisoner',

@@ -9,6 +9,7 @@ const verbTable = {
 	d: ['basso', 'b'],
 	eat: ['mangia', 'addenta', 'sgranocchia'],
 	use: ['usa', 'u'],
+	insert: ['infila', 'inserisci', 'passa'],
 	pick: ['raccogli', 'prendi', 'p'],
 	spread: ['spalma'],
 	watch: ['guarda', 'vedi', 'osserva', 'scruta', 'g'],
@@ -17,6 +18,7 @@ const verbTable = {
 	yes: ['no'],
 	no: ['no'],
 	help: ['help', 'aiuto', 'h'],
+	save: ['save', 'salva'],
 }
 
 const objectTable = {
@@ -24,6 +26,7 @@ const objectTable = {
 	cheese: ['formaggio'],
 	door: ['porta'],
 	peephole: ['spioncino'],
+	mirror: ['specchio', 'frammento di specchio'],
 	jailer: ['carceriere', 'secondino'],
 	pirate: ['pirata', 'corsaro', 'bucaniere'],
 	key: ['chiave', 'chiavi']

@@ -27,7 +27,7 @@ const prisoner = {
             Il tuo destino è ormai segnato.
             Passano lo ore, ritorna la fame che inesorabilmente ti porta alla morte.`
         },
-        spread_cheese: () => prisoner.actions.use_cheese(),
+        spread_cheese_rope: () => prisoner.actions.use_cheese_rope(),
         use_cheese_rope: () => {
             incrementPointsBy(10);
             setObject({
@@ -44,7 +44,6 @@ const prisoner = {
             prisoner.longDesc = `Al centro si erge ancora il sudicio palo a cui eri legato. 
             C'è sempre l'odore di escrementi e lo squittire di ratti, ma ora pensi a quelle bestioline con tenera gratitudine.`
             prisoner.actions = {
-                ...prisoner.actions,
                 n: () => `Sbatti contro la lurida parete della cella.`,
                 s: () => `Sbatti contro la lurida parete della cella.`,
                 e: () => `Arrivi ad una pesante porta di metallo che ti sbarra la via. 
@@ -52,15 +51,25 @@ const prisoner = {
                 o: () => `Sbatti contro la lurida parete della cella.`,
                 u: () => `Provi a fare un salto, ma il soffitto è troppo alto da raggiungere. Ad ogni modo modo non sembra esserci nulla di interessante.`,
                 d: () => `Sei già nella stiva, più in basso di così c'è solo l'inifinità degli abissi!`,
-                use_rope_peephole: () => {
-                    incrementPointsBy(20);
+                insert_mirror_peephole: () => prisoner.actions.use_mirror_peephole(),
+                use_mirror_peephole: () => {
                     prisoner.actions = {
                         ...prisoner.actions,
-                        e: () => setCurrentScene('jailer'),
-                    }
-                    return `Infili la corda che ti teneva legato nello spioncino e riesci a tirare il chiavistello che chiude la porta.
-                    Finalmente sei libero!`;
-                }
+                        insert_rope_peephole: () => prisoner.actions.use_rope_peephole(),
+                        use_rope_peephole: () => {
+                            incrementPointsBy(20);
+                            prisoner.actions = {
+                                ...prisoner.actions,
+                                e: () => setCurrentScene('jailer'),
+                            }
+                            return `Infili la corda che ti teneva legato nello spioncino e riesci a tirare il chiavistello che chiude la porta.
+                            Finalmente sei libero!`;
+                        },
+                    };
+                    return `Infilando lo specchio nello spioncino vedi che la porta è chiusa da un chiavistello.
+                    È molto massiccio, ma per fortuna non è chiuso a chiave.
+                    Purtroppo per pochi centrimetri non riesci a manovrarlo.`;
+                },
             };
             return `A malincuore rinunci a mangiare il ghiotto boccone e decidi invece di provare a spalmarlo sulle corde che ti tengono imprigionato.
             Uno dei topi che ti fanno compagnia nella misera cella si avvicina leccandosi i baffi e comincia a rosicchiare la corda. 

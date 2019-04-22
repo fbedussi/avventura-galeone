@@ -24,6 +24,9 @@ function help() {
   Per rivedere questo messaggio:
   - help (h)
   
+  Per salvare lo stato del gioco:
+  - salva
+  
   Per uscire dal gioco:
   - esci
   `; 

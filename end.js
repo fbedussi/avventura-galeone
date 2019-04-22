@@ -1,4 +1,4 @@
-const {getTurns} = require('./turns');
+const { getTurns } = require('./turns');
 const { getPoints } = require('./points');
 const output = require('./output');
 const { getWon } = require('./ended');
@@ -31,7 +31,7 @@ function end() {
 // 	return input.getInput()
 // 		.then((userInput) => {
 // 			const parsedInput = parseInput(userInput);
-			
+
 // 			if (parsedInput[0] === 'yes') {
 // 				end()
 // 			}
