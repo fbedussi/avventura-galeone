@@ -10,7 +10,7 @@ function init(msg = promptMsg) {
 function getInput() {
     return new Promise((resolve) => {
         console.log(promptMsg);
-        process.stdin.on('data', function (data) {
+        process.stdin.once('data', function (data) {
             resolve(data.trim().toLowerCase());
         });
     })
