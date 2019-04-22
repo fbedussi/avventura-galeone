@@ -8,6 +8,7 @@ const { end } = require("./end");
 const { getObject, playerHasObject, listCurrentSceneObjects } = require("./objects/objectsManager");
 const { help } = require("./help");
 const { getRandomArrayItem } = require('./utils');
+const { saveGame } = require('./saveGame');
 
 function pick({ parsedInput, rawInput }) {
   const currentLocation = getCurrentScene();
@@ -63,6 +64,7 @@ const commonActions = {
   inventary: getInventary,
   exit: end,
   pick: pick,
+  save: saveGame,
   help: help
 };
 decodeAction
@@ -88,13 +90,10 @@ function checkYouDontOwnError(parsedInput, rawInput) {
 
 
 function getForbiddenActionError() {
-  pick
   const forbiddenActionErrors = [
-    `Ma sei matto?`,
     `Non è possibile`,
     `Purtroppo non è possibile`,
     `Sai bene che non è possibile`,
-    `Fossi matto`,
     `Magari fosse possibile!`,
   ]
 

@@ -13,9 +13,9 @@ function setLoose() {
     ended = true;
 }
 
-function setWon() {
-    ended = true;
-    won = true;
+function setWon(endedValue = true, wonValue = true) {
+    ended = endedValue;
+    won = wonValue;
 }
 
 module.exports = {

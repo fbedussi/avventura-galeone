@@ -1,6 +1,9 @@
-const output = require('../output');
-
 let currentScene;
+
+function getScenes() {
+    const scenes = require('./index');
+    return scenes;
+}
 
 function getScene(sceneName) {
     const scenes = require('./index');
@@ -19,4 +22,5 @@ function getCurrentScene() {
 module.exports = {
     setCurrentScene,
     getCurrentScene,
+    getScenes,
 }

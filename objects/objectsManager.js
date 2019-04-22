@@ -21,6 +21,10 @@ function listCurrentSceneObjects() {
     }
 }
 
+function getObjects() {
+    return objects;
+}
+
 function getObject(term) {
     const location = getCurrentScene();
     return objects.find(object => object.term === term && (object.carried || object.location == location.name));
@@ -42,6 +46,10 @@ function setObject(updatedObject) {
     );
 }
 
+function setObjects(newObjects) {
+    objects = newObjects;
+}
+
 function getCarriedObjects() {
     return objects.filter((object) => object.carried);
 }
@@ -53,4 +61,6 @@ module.exports = {
     playerHasObject,
     setObject,
     getCarriedObjects,
+    getObjects,
+    setObjects,
 }

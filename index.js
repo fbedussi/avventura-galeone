@@ -1,6 +1,8 @@
 "use strict";
 const input = require("./input");
-const scenes = require("./scenes/index");
+const { loadGame } = require('./saveGame');
+const savedData = loadGame();
+const scenes = savedData.scenes || require("./scenes/index");
 const { setCurrentScene } = require("./scenes/sceneManager");
 const { loop } = require("./loop");
 const { help } = require("./help");
