@@ -50,7 +50,7 @@ function checkWatchAction(parsedInput, rawInput) {
 
   // watch scene
   if (!parsedInput[1] && !parsedInput[2]) {
-    return () => getCurrentScene().longDesc + listCurrentSceneObjects();
+    return () => getCurrentScene().shortDesc + '\n' + getCurrentScene().longDesc + listCurrentSceneObjects();
   }
 }
 
@@ -95,6 +95,9 @@ function getForbiddenActionError() {
     `Purtroppo non è possibile`,
     `Sai bene che non è possibile`,
     `Magari fosse possibile!`,
+    `Non funziona`,
+    `Non succede nulla`,
+    `E niente... non succede niente`,
   ]
 
   return getRandomArrayItem(forbiddenActionErrors);
@@ -126,11 +129,10 @@ function checkPickAction(parsedInput) {
 
 function getUnfruitfulAction() {
   const unfruifulActionErrors = [
-    `Non è possibile`,
-    `Non funziona`,
     'Per fare cosa?',
-    `Non succede nulla`,
-    `E niente... non succede niente`,
+    'In che modo?',
+    'Come?',
+    'Non so come',
   ];
 
   return getRandomArrayItem(unfruifulActionErrors);
