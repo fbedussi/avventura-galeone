@@ -28,3 +28,7 @@ bot.help((ctx) => {
   output(ctx, help());
 })
 bot.launch()
+
+module.exports = (req, res) => {
+  res.end('Welcome to my API')
+}
