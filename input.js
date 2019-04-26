@@ -1,18 +1,17 @@
-const stdin = process.stdin;
-
 let promptMsg = '\nCosa devo fare?';
+let resolveInput;
 
-function init(msg = promptMsg) {
-    stdin.setEncoding('utf-8');
+function init(bot, msg = promptMsg) {
     promptMsg = msg;
+    bot.on('text', (ctx) => {
+        ctx.message.text = ctx.message.text.trim().toLowerCase();
+        return resolveInput(ctx);
+    })
 }
 
 function getInput() {
     return new Promise((resolve) => {
-        console.log(promptMsg);
-        process.stdin.once('data', function (data) {
-            resolve(data.trim().toLowerCase());
-        });
+        resolveInput = resolve;
     })
 }
 

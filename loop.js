@@ -10,10 +10,11 @@ const { decodeAction } = require('./decoder');
 function loop() {
 	incrementTurns();
 	input.getInput()
-		.then((userInput) => {
+		.then((ctx) => {
+			const userInput = ctx.message.text;
 			const parsedInput = parseInput(userInput);
 			const action = decodeAction(parsedInput);
-			output(action(parsedInput));
+			output(ctx, action(parsedInput));
 			if (getEnded()) {
 				end()
 			} else {
