@@ -16,7 +16,7 @@ function pick({ parsedInput, rawInput }) {
   const rawObjectName = rawInput[1];
   const object = getObject(objectName);
 
-  if (!object || object.location !== currentLocation.name) {
+  if (!object || !object.pickable || object.location !== currentLocation.name) {
     return `Non c'è nessun ${rawObjectName} qui.`;
   }
 
