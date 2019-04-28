@@ -15,5 +15,8 @@
     "gioco"
   ],
   "author": "Francesco Bedussi",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-eval": "^2.0.0"
+  }
 }

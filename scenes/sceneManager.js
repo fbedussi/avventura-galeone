@@ -1,12 +1,19 @@
 let currentScene;
+let scenes;
+
+function setScenes(newScenes) {
+    scenes = newScenes;
+}
 
 function getScenes() {
-    const scenes = require('./index');
+    if (!scenes) {
+        scenes = require('./index');
+    }
     return scenes;
 }
 
 function getScene(sceneName) {
-    const scenes = require('./index');
+    const scenes = getScenes();
     return Object.values(scenes).find((scene) => scene.name === sceneName);
 }
 
@@ -23,4 +30,5 @@ module.exports = {
     setCurrentScene,
     getCurrentScene,
     getScenes,
+    setScenes,
 }

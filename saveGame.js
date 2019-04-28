@@ -4,6 +4,8 @@ const { getPoints, setPoints } = require('./points');
 const { getObjects, setObjects } = require('./objects/objectsManager');
 const { getScenes } = require('./scenes/sceneManager');
 const { getEnded, getWon, setWon } = require('./ended');
+const { getCurrentScene } = require('./scenes/sceneManager');
+const _eval = require('node-eval');
 
 function objectToString(object) {
     return JSON.stringify(object, function (key, val) {
@@ -12,28 +14,13 @@ function objectToString(object) {
 }
 
 function stringToObject(objString) {
-    return JSON.parse(objString, function (key, val) {
-
-        // Make sure the current value is not null (is a string)
-        // and that the first characters are "function"
-        if (typeof val === "string" && val.indexOf('function') === 0) {
-
-            // Isolate the argument names list
-            var start = val.indexOf("(") + 1;
-            var end = val.indexOf(")");
-            var argListString = val.substring(start, end).split(",");
-
-            // Isolate the body of the function
-            var body = val.substr(val.indexOf("{"), val.length - end + 1);
-
-            // Construct a new function using the argument names and body
-            // stored in the string:
-            return new Function(argListString, body);
-
-        } else {
-            // Non-function property, just return the value
-            return val;
-        }
+    return JSON.parse(objString, (key, val) => {
+        const isRegularFunction = typeof val === 'string' && val.indexOf('function') === 0;
+        const isArrowFunction = typeof val === 'string' && val.indexOf('=>') > -1;
+        return isRegularFunction || isArrowFunction ?
+            _eval(val)
+            : val
+        ;
     });
 }
 
@@ -44,6 +31,7 @@ function saveGame() {
     const scenes = getScenes();
     const ended = getEnded();
     const won = getWon();
+    const currentScene = getCurrentScene();
     //const date = new Date();
     //const fileName = `avventura-galeone-save-${date.getFullYear()}-${date.getMonth()}-${date.getDay()}-${date.getSeconds()}.json`;
     const fileName = `avventura-galeone-save.json`;
@@ -54,6 +42,7 @@ function saveGame() {
         scenes,
         ended,
         won,
+        currentSceneName: currentScene.name,   
     });
     fs.writeFileSync(fileName, data);
     return `Gioco salvato in ${fileName}`;
@@ -80,7 +69,7 @@ function loadGame(fileName = 'avventura-galeone-save.json') {
     turns && setTurns(turns);
     points && setPoints(points);
     objects && setObjects(objects);
-    ended && won && setWon(ended, won)
+    ended && won && setWon(ended, won);
 
     return data
 }
