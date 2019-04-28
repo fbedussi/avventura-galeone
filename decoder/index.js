@@ -1,58 +1,16 @@
 const {
   getDefaultVoidResponse,
   getNoPasingResponse
-} = require("./defaultResponses");
-const { getInventary } = require("./inventary");
-const { getCurrentScene } = require("./scenes/sceneManager");
-const { end } = require("./end");
-const { getObject, playerHasObject, listCurrentSceneObjects } = require("./objects/objectsManager");
-const { help } = require("./help");
-const { getRandomArrayItem } = require('./utils');
-const { saveGame } = require('./saveGame');
-
-function pick({ parsedInput, rawInput }) {
-  const currentLocation = getCurrentScene();
-  const objectName = parsedInput[1];
-  const rawObjectName = rawInput[1];
-  const object = getObject(objectName);
-
-  if (!object || !object.pickable || object.location !== currentLocation.name) {
-    return `Non c'è nessun ${rawObjectName} qui.`;
-  }
-
-  if (object.carried) {
-    return `Hai già ${rawObjectName}`;
-  }
-
-  object.carried = true;
-  object.location = null;
-
-  return `Hai preso ${object.label}`;
-}
-
-function checkWatchAction(parsedInput, rawInput) {
-  const object = getObject(parsedInput[1]);
-  
-  // no watch action
-  if (parsedInput[0] !== 'watch') {
-    return false;
-  }
-
-  // watch a know object
-  if (object) {
-    return () => object.description || object.label;
-  }
-
-  // watch an unknown object
-  if (!object && rawInput[1]) {
-    return () => `Qui non ne vedo`;
-  }
-
-  // watch scene
-  if (!parsedInput[1] && !parsedInput[2]) {
-    return () => getCurrentScene().shortDesc + '\n' + getCurrentScene().longDesc + listCurrentSceneObjects();
-  }
-}
+} = require("../defaultResponses");
+const { getInventary } = require("../inventary");
+const { getCurrentScene } = require("../scenes/sceneManager");
+const { end } = require("../end");
+const { getObject, playerHasObject } = require("../objects/objectsManager");
+const { help } = require("../help");
+const { getRandomArrayItem } = require('../utils');
+const { saveGame } = require('../saveGame');
+const { pick, leave } = require('./pick');
+const { checkWatchAction } = require('./watch');
 
 const commonActions = {
   n: getNoPasingResponse,
@@ -64,11 +22,12 @@ const commonActions = {
   inventary: getInventary,
   exit: end,
   pick: pick,
+  leave: leave,
   save: saveGame,
   help: help
 };
-decodeAction
-const transitiveVerbs = ['eat', 'spread', 'use', 'pick'];
+
+const transitiveVerbs = ['eat', 'spread', 'use', 'pick', 'leave'];
 
 function getTransitiveError(verb) {
   return () => `${verb}... cosa?`;

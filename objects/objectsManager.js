@@ -1,5 +1,6 @@
 const { getCurrentScene } = require('../scenes/sceneManager');
 
+const MAX_CARRIABLE_OBJECTS = 10;
 let objects = require('./objects');
 
 function listCurrentSceneObjects() {
@@ -54,6 +55,10 @@ function getCarriedObjects() {
     return objects.filter((object) => object.carried);
 }
 
+function canCarryMoreObjects() {
+    return objects.filter((object) => object.carried).length < MAX_CARRIABLE_OBJECTS;
+}
+
 module.exports = {
     objects,
     listCurrentSceneObjects,
@@ -63,4 +68,5 @@ module.exports = {
     getCarriedObjects,
     getObjects,
     setObjects,
+    canCarryMoreObjects,
 }

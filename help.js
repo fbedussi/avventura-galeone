@@ -15,8 +15,9 @@ function help() {
   Per avere l'elenco degli oggetti che possiedi:
   - inventario (i)
   
-  Per prendere un oggetto:
+  Per prendere o lasciare un oggetto:
   - prendi (p) + [nome oggetto]
+  - lascia (l) è [nome oggetto]
   
   Per usare un oggetto:
   - usa (u) + [nome oggetto]
