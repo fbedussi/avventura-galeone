@@ -26,9 +26,9 @@ function getObjects() {
     return objects;
 }
 
-function getObject(term) {
+function getObject(termOrId) {
     const location = getCurrentScene();
-    return objects.find(object => object.term === term && (object.carried || object.location == location.name));
+    return objects.find(object => (object.term === termOrId || object.id === termOrId) && (object.carried || object.location == location.name));
 }
 
 function playerHasObject(objectName) {

@@ -64,6 +64,21 @@ const objects = [
         label: 'un mazzo di chiavi unte',
         description: `Sono delle chiavi mezze arruginite e un po' storte, chissà cosa aprono.`,
     },
+    {
+        term: 'shelf',
+        location: 'hardware',
+        id: 'shelf-hardware',
+        show: true,
+        label: 'uno scaffale pieno di chiodi storti e attrezzi arrugginiti',
+        description: `Lo scaffale è pieno di ciarpame inutile, ma in un angolo vedi un coltello apparentemente ancora in buono stato.`,
+    },
+    {
+        term: 'knife',
+        location: 'hardware',
+        id: 'knife-hardware',
+        label: 'un coltello',
+        description: `È un coltello un po' malmesso ma ancora utilizzabile.`,
+    },
 ]
 
 module.exports = objects;

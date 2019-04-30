@@ -7,8 +7,12 @@ function pick({ parsedInput, rawInput }) {
     const rawObjectName = rawInput[1];
     const object = getObject(objectName);
 
-    if (!object || !object.pickable || object.location !== currentLocation.name) {
+    if (!object || object.location !== currentLocation.name) {
         return `${rawObjectName}? Qui non ce n'è.`;
+    }
+
+    if (!object.pickable) {
+        return 'Non si può prendere!';
     }
 
     if (object.carried) {

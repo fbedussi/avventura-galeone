@@ -1,6 +1,6 @@
 const { setCurrentScene } = require('./sceneManager');
 const { incrementPointsBy } = require('../points');
-const { setLoose, setWon } = require('../ended');
+const { setLoose } = require('../ended');
 const { setObject } = require('../objects/objectsManager');
 
 const prisoner = {

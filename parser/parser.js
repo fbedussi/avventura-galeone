@@ -30,7 +30,9 @@ const objectTable = {
 	mirror: ['specchio', 'frammento di specchio'],
 	jailer: ['carceriere', 'secondino'],
 	pirate: ['pirata', 'corsaro', 'bucaniere'],
-	key: ['chiave', 'chiavi']
+	key: ['chiave', 'chiavi'],
+	knife: ['coltello'],
+	shelf: ['scaffale'],
 };
 
 function decodeTerm(term = '', table) {
