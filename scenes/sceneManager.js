@@ -18,12 +18,13 @@ function getScene(sceneName) {
 }
 
 function setCurrentScene(newScene) {
-	currentScene = typeof newScene === 'string' ? getScene(newScene) : newScene;
-	return currentScene.shortDesc;
+    currentScene = typeof newScene === 'string' ? getScene(newScene) : newScene;
+    return currentScene.shortDesc;
 }
 
 function getCurrentScene() {
-    return currentScene;
+    const scenes = getScenes();
+    return currentScene || scenes.prisoner;
 }
 
 module.exports = {

@@ -1,32 +1,12 @@
-const {
-  getDefaultVoidResponse,
-  getNoPasingResponse
-} = require("../defaultResponses");
-const { getInventary } = require("../inventary");
+const { getDefaultVoidResponse } = require("../defaultResponses");
 const { getCurrentScene } = require("../scenes/sceneManager");
-const { end } = require("../end");
 const { getObject, playerHasObject } = require("../objects/objectsManager");
-const { help } = require("../help");
 const { getRandomArrayItem } = require('../utils');
-const { saveGame } = require('../saveGame');
-const { pick, leave } = require('./pick');
 const { checkWatchAction } = require('./watch');
-
-const commonActions = {
-  n: getNoPasingResponse,
-  s: getNoPasingResponse,
-  e: getNoPasingResponse,
-  o: getNoPasingResponse,
-  u: () => `Non ho ancora imparato a volare!`,
-  d: () => `Non ho ancora imparato a scavare!`,
-  inventary: getInventary,
-  exit: end,
-  pick: pick,
-  leave: leave,
-  save: saveGame,
-  help: help
-};
-
+const { recordAction } = require('../history');
+const { getCommonActions } = require('./commonActions');
+ 
+const commonActions = getCommonActions();
 const transitiveVerbs = ['eat', 'spread', 'use', 'pick', 'leave'];
 
 function getTransitiveError(verb) {
@@ -73,17 +53,27 @@ function checkForbiddenActionError(parsedInput) {
     getForbiddenActionError;
 }
 
-function checkSceneAction(parsedInput) {
+function checkSceneAction(parsedInput, rawInput) {
   const actionKey = parsedInput.filter(x => x).join("_");
   const currentScene = getCurrentScene();
 
-  return (typeof currentScene.actions[actionKey] === "function" &&
-    currentScene.actions[actionKey])
-    || currentScene.defaultResponse;
+  return (
+    typeof currentScene.actions[actionKey] === "function"
+    && recordAction({sceneName: currentScene.name, actionKey, params: [{parsedInput, rawInput}]})
+    && currentScene.actions[actionKey]
+  );
 }
 
-function checkPickAction(parsedInput) {
-  return parsedInput[0] === "pick" && commonActions.pick
+function checkPickAction(parsedInput, rawInput) {
+  return parsedInput[0] === 'pick' 
+    && recordAction({sceneName: null, actionKey: 'pick', params: [{parsedInput, rawInput}]})    
+    && commonActions.pick
+}
+
+function checkLeaveAction(parsedInput, rawInput) {
+  return parsedInput[0] === 'leave' 
+    && recordAction({sceneName: null, actionKey: 'leave', params: [{parsedInput, rawInput}]})    
+    && commonActions.pick
 }
 
 function getUnfruitfulAction() {
@@ -107,10 +97,11 @@ function decodeAction({ parsedInput, rawInput }) {
   return (
     checkTransitiveError(parsedInput, rawInput) ||
     checkYouDontOwnError(parsedInput, rawInput) ||
-    checkSceneAction(parsedInput) ||
+    checkSceneAction(parsedInput, rawInput) ||
     checkWatchAction(parsedInput, rawInput) ||
     checkForbiddenActionError(parsedInput) ||
-    checkPickAction(parsedInput) ||
+    checkPickAction(parsedInput, rawInput) ||
+    checkLeaveAction(parsedInput, rawInput) ||
     commonActions[parsedInput[0]] ||
     checkUnfruifulAction(parsedInput) ||
     getDefaultVoidResponse
@@ -118,5 +109,5 @@ function decodeAction({ parsedInput, rawInput }) {
 }
 
 module.exports = {
-  decodeAction
+  decodeAction,
 };
