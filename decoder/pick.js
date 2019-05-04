@@ -12,7 +12,7 @@ function pick({ parsedInput, rawInput }) {
     }
 
     if (!object.pickable) {
-        return 'Non si può prendere!';
+        return 'Non è possibile!';
     }
 
     if (object.carried) {

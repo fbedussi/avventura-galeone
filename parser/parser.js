@@ -33,6 +33,7 @@ const objectTable = {
 	key: ['chiave', 'chiavi'],
 	knife: ['coltello'],
 	shelf: ['scaffale'],
+	sail: ['vela', 'vele'],
 };
 
 function decodeTerm(term = '', table) {

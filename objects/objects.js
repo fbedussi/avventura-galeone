@@ -79,6 +79,14 @@ const objects = [
         label: 'un coltello',
         description: `È un coltello un po' malmesso ma ancora utilizzabile.`,
     },
+    {
+        term: 'sail',
+        location: 'sails',
+        id: 'sail-sails',
+        label: 'un mucchio di vele accatastate',
+        show: true,
+        description: `Sono mucchi di vele sporche e lacere, non sembrano molto utili.`,
+    },
 ]
 
 module.exports = objects;

@@ -8,7 +8,7 @@ const hardware = {
     longDesc: `Questa è la ferramenta della nave, dove vengono custoditi tutti gli attrezzi che possono servire alla sua manutenzione... sempre che i pirati si ricordino di riportarli qui dopo averli utilizzati... l'ordine non è la loro migliore qualità.`,
     actions: {
         n: () => `Di qui non si passa, questa è tutta l'aria di essere la chiglia della nave`,
-        s: () => /* setCurrentScene('sails') */'DEV',
+        s: () => setCurrentScene('sails'),
         e: () => `C'è un pesante scaffale pieno di chiodi storti e attrezzi arrugginiti. E anche qualche insetto morto. Non mi sembra proprio che si possa passare.`,
         o: () => setCurrentScene('jailer'),
         u: () => `Provi a fare un salto, ma il soffitto è troppo alto da raggiungere. Ad ogni modo modo non sembra esserci nulla di interessante.`,
