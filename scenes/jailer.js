@@ -9,7 +9,7 @@ const prisoner = {
     Doveva essere il tuo carceriere.`,
     actions: {
         n: () => `Di qui non si passa, questa è tutta l'aria di essere la chiglia della nave`,
-        s: () => setCurrentScene('legs'),
+        s: () => `C'è una solida parete di legno`,
         e: () => setCurrentScene('hardware'),
         o: () => setCurrentScene('prisoner'),
         u: () => `Provi a fare un salto, ma il soffitto è troppo alto da raggiungere. Ad ogni modo modo non sembra esserci nulla di interessante.`,

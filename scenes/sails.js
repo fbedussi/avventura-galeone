@@ -10,7 +10,7 @@ const sails = {
     actions: {
         n: () => setCurrentScene('hardware'),
         s: () => `Di qui non si passa, questa è tutta l'aria di essere la chiglia della nave`,
-        e: () => /* setCurrentScene('coffers') */'DEV',
+        e: () => setCurrentScene('coffers'),
         o: () => setCurrentScene('legs'),
         u: () => `Provi a fare un salto, ma il soffitto è troppo alto da raggiungere. Ad ogni modo modo non sembra esserci nulla di interessante.`,
         d: () => `Sei già nella stiva, più in basso di così c'è solo l'inifinità degli abissi!`,

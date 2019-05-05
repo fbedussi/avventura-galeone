@@ -34,6 +34,11 @@ const objectTable = {
 	knife: ['coltello'],
 	shelf: ['scaffale'],
 	sail: ['vela', 'vele'],
+	wood: ['legno', 'legni'],
+	leg: ['gambe', 'gamba'],
+	coffers: ['forzieri'],
+	coffer: ['forziere'],
+	hole: ['boccaporto'],
 };
 
 function decodeTerm(term = '', table) {

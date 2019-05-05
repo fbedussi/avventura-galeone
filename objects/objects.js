@@ -87,6 +87,47 @@ const objects = [
         show: true,
         description: `Sono mucchi di vele sporche e lacere, non sembrano molto utili.`,
     },
+    {
+        term: 'leg',
+        location: 'legs',
+        id: 'leg-legs',
+        label: 'la collezione di gambe di legno dei pirati',
+        show: true,
+        description: `Sono tutte piuttosto malmesse.`,
+    },
+    {
+        term: 'coffers',
+        location: 'coffers',
+        id: 'coffers-coffers',
+        label: 'un ammasso di forzieri',
+        show: true,
+        description: `Sono un mucchio di forzieri, purtroppo tutti vuoti.`,
+    },
+    {
+        term: 'coffer',
+        location: 'coffers',
+        id: 'coffer-coffers',
+        label: 'un forziere',
+        pickable: true,
+        description: `È un forziere vuoto.`,
+    },
+    {
+        term: 'ladder',
+        location: 'ropes',
+        id: 'ladder-ropes',
+        label: 'una scala di corda',
+        pickable: true,
+        show: true,
+        description: `È una scala di corda arrotolata, sembra messa bene.`,
+    },
+    {
+        term: 'hole',
+        location: 'exit0',
+        id: 'hole-exit0',
+        label: 'un boccaporto',
+        show: true,
+        description: `Probabilmente è il passaggio che permette di uscire dalla stiva. Ai bordi vedi 2 gnaci di ferro.`,
+    },
 ]
 
 module.exports = objects;
