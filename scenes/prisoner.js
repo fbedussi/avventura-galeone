@@ -2,6 +2,7 @@ const { setCurrentScene } = require('./sceneManager');
 const { incrementPointsBy } = require('../points');
 const { setLoose } = require('../ended');
 const { setObject } = require('../objects/objectsManager');
+const { pick } = require('../decoder/pick');
 
 const prisoner = {
     name: 'prisoner',
@@ -44,13 +45,24 @@ const prisoner = {
             prisoner.longDesc = `Al centro si erge ancora il sudicio palo a cui eri legato. 
             C'è sempre l'odore di escrementi e lo squittire di ratti, ma ora pensi a quelle bestioline con tenera gratitudine.`
             prisoner.actions = {
-                n: () => `Sbatti contro la lurida parete della cella.`,
+                n: () => {
+                    setObject({
+                        id: 'mirror-prisoner',
+                        show: true,
+                        pickable: true,
+                    });
+                    return `Non si va da nessuna parte, però... guarda un po'! C'è un frammento di specchio`;
+                },
                 s: () => `Sbatti contro la lurida parete della cella.`,
                 e: () => `Arrivi ad una pesante porta di metallo che ti sbarra la via. 
                 L'unica apertura è lo spioncino da cui i tuoi carcerieri ti passavano i tuoi magri pasti.`,
                 o: () => `Sbatti contro la lurida parete della cella.`,
                 u: () => `Provi a fare un salto, ma il soffitto è troppo alto da raggiungere. Ad ogni modo modo non sembra esserci nulla di interessante.`,
                 d: () => `Sei già nella stiva, più in basso di così c'è solo l'inifinità degli abissi!`,
+                pick_mirror: (...args) => {
+                    prisoner.actions.n = () => `Sbatti contro la lurida parete della cella.`;
+                    return pick(...args);
+                },
                 insert_mirror_peephole: () => prisoner.actions.use_mirror_peephole(),
                 use_mirror_peephole: () => {
                     prisoner.actions = {

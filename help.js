@@ -9,7 +9,7 @@ function help() {
   - sud (s)
   - est (e)
   - ovest (o)
-  - alto (a)
+  - alto (al)
   - basso (b)
   
   Per avere l'elenco degli oggetti che possiedi:
@@ -17,7 +17,7 @@ function help() {
   
   Per prendere o lasciare un oggetto:
   - prendi (p) + [nome oggetto]
-  - lascia (l) è [nome oggetto]
+  - lascia (l) + [nome oggetto]
   
   Per usare un oggetto:
   - usa (u) + [nome oggetto]

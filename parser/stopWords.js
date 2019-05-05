@@ -17,4 +17,5 @@ module.exports = [
     'tra',
     'fra',
     'pezzi',
+    'intorno',
 ];

@@ -20,10 +20,8 @@ const objects = [
     },
     {
         term: 'mirror',
+        location: 'prisoner',
         id: 'mirror-prisoner',
-        carried: true,
-        show: true,
-        pickable: true,
         label: 'un frammento di specchio',
         actions: ['use', 'insert'],
     },
@@ -41,6 +39,7 @@ const objects = [
     {
         term: 'door',
         location: 'prisoner',
+        id: 'door-prisoner',
         description: `È una porta di ferro. Sembra decisamente resistente. 
         Al centro c'è uno spioncino che i tuoi carcerieri usavano per passarti il cibo. Se di cibo si può parlare.
         Ma ovviamente è troppo piccolo perché tu ci possa passare.`,
@@ -110,6 +109,7 @@ const objects = [
         label: 'un forziere',
         pickable: true,
         description: `È un forziere vuoto.`,
+        actions: ['jump'],
     },
     {
         term: 'ladder',
@@ -126,7 +126,7 @@ const objects = [
         id: 'hole-exit0',
         label: 'un boccaporto',
         show: true,
-        description: `Probabilmente è il passaggio che permette di uscire dalla stiva. Ai bordi vedi 2 gnaci di ferro.`,
+        description: `Probabilmente è il passaggio che permette di uscire dalla stiva. Ai bordi vedi 2 ganci di ferro.`,
     },
 ]
 

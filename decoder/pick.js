@@ -40,6 +40,7 @@ function leave({ parsedInput, rawInput }) {
     }
 
     object.carried = false;
+    object.show = true;
     object.location = currentLocation.name;
 
     return `Hai lasciato ${object.label}`;
