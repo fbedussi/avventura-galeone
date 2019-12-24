@@ -4,15 +4,49 @@ O ------- E
      |
      S
 
+stiva:
+
      /----------------------------------------------------------------
     /          |              |              |           |           |
-   /           | carcerirere  | ferramenta   | corde     | uscita    |
+   /             carcerirere    ferramenta   | corde     | uscita ^  |
   /              - chiave       - coltelo    | - scala   |           |
  /             |              |              |           |           |
-/  prigione    |--------------------  ------------  ------           |
+/  prigione    |--------------------    ---------    -----           |
 \  - specchio  |              |              |           |           |
- \ - corda     | gambe di     | vele         | forzieri  |           | 
-  \            | legno                         - cassa               | 
-   \           |              |              |           |           |
+ \ - corda     | vele           gambe di       forzieri  |           | 
+  \            | - pirata       legno          - cassa               | 
+   \           |   arrabbiato | - gamba di   |           |           |
+    \          |              |   legno      |           |           |
+     \----------------------------------------------------------------
+
+
+Sottocoperta:
+
+     /----------------------------------------------------------------
+    /          |              |              |           |           |
+   /           | Anticamera   | Sala da      | cucina      verso la  |
+  /                             pranzo                   | stiva \/  |
+ / Cabina      |              |- pirati morti|           |           |
+/  Capitano    |--------------------  ------------  ------           |
+\  - Diario    |              |              |           |           |
+ \             | Stanza       | scala ^      | Cambusa   |           | 
+  \            | del tesoro   |              | - cibo    |           | 
+   \           | - tesoro     |              |           |           |
     \          |              |              |           |           |
+     \----------------------------------------------------------------
+
+
+Coperta:
+
+     /----------------------------------------------------------------
+    /          |                                         | Cassero   |
+   / -Scialuppa|                                           - palo    |
+  /                                                      |           |
+ /             |                                         |           |
+/              |--------------------  ------------  ------           |
+\              |                                         |           |
+ \             |                boccaporto \/            |           | 
+  \                                                                  | 
+   \           |                                         |           |
+    \          |                                         |           |
      \----------------------------------------------------------------
