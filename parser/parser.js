@@ -1,4 +1,6 @@
 const stopWords = require('./stopWords');
+const { getCurrentScene } = require('../scenes/sceneManager');
+const { getObjects } = require('../objects/objectsManager');
 
 const verbTable = {
     n: ['nord', 'n'],
@@ -48,6 +50,22 @@ function decodeTerm(term = '', table) {
     return Object.keys(table).find((key) => table[key].includes(term.trim()));
 }
 
+function decodeObject(term = '', table) {
+    const trimmedTerm = term.trim();
+    const scene = getCurrentScene();
+    const objects = getObjects();
+    return Object.keys(table).find((key) => {
+        const keyIsRight = table[key].includes(trimmedTerm);
+
+        if (!keyIsRight) {
+            return false;
+        }
+
+        const object = objects.find((o) => o.term === key && (o.carried || o.location === scene.name));
+        return Boolean(object);
+    });
+}
+
 function parseInput(input) {
     const rawInput = input
         .replace("'", ' ')
@@ -58,8 +76,8 @@ function parseInput(input) {
     return {
         parsedInput: [
             decodeTerm(rawVerb, verbTable),
-            decodeTerm(rawObject, objectTable),
-            decodeTerm(rawComplement, objectTable),
+            decodeObject(rawObject, objectTable),
+            decodeObject(rawComplement, objectTable),
         ],
         rawInput,
     };

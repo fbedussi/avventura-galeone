@@ -5,12 +5,11 @@ const keelDefaultActions = require('./keelDefaultActions');
 
 const prisoner = {
     name: 'jailer',
-    shortDesc: `Ti trovi nell'anticamera della cella.`,
-    longDesc: `Tra scatole sfondate e palle di cannone arrugginite spicca un pirata stramazzato al suolo.
-    Doveva essere il tuo carceriere.`,
+    shortDesc: 'Ti trovi nell\'anticamera della cella.',
+    longDesc: 'Tra scatole sfondate e palle di cannone arrugginite spicca il tuo carceriere stramazzato al suolo',
     actions: {
         ...keelDefaultActions,
-        s: () => `C'è una solida parete di legno`,
+        s: () => 'C\'è una solida parete di legno',
         e: () => setCurrentScene('hardware'),
         o: () => setCurrentScene('prisoner'),
         watch_jailer: () => {
@@ -30,7 +29,7 @@ const prisoner = {
                 Alla vita ha una rozza cintura, fatta con un pezzo di corda.`,
             });
             return pick(...args);
-        }
+        },
     },
 };
 

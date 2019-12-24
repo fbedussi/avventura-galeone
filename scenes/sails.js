@@ -17,7 +17,7 @@ const sails = {
             return `Prima di esalare l'ultimo respiro il pirata fa in tempo a colpirti alle spalle, tu sei disarmato e non riesci a difenderti. 
             Prima di morire fai in tempo a pensare che non è stata una buona idea aggirarti su un galeone pirata solo e disarmato.`;
         },
-        use_knife: () => {
+        use_knife_pirate: () => {
             incrementPointsBy(10);
             sails.actions.e = () => setCurrentScene('legs');
             setObject({
@@ -27,7 +27,7 @@ const sails = {
             });
             return 'Il pirata prova a saltarti alla gola, ma tu sei più forte e lo infilzi dritto al cuore. Il pirata si accascia stecchito';
         },
-        use_leg: () => {
+        use_leg_pirate: () => {
             incrementPointsBy(10);
             sails.actions.e = () => setCurrentScene('legs');
             setObject({
