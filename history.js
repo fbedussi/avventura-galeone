@@ -1,5 +1,7 @@
 const { getScenes } = require('./scenes/sceneManager');
-let actionHistory = []
+const { incrementTurns, setTurns } = require('./turns');
+
+let actionHistory = [];
 
 function getActionHistory() {
     return actionHistory;
@@ -14,8 +16,8 @@ function setActionHistory(newHistory) {
  * @prop {string} sceneName
  * @prop {string} actionKey
  * @prop {array} params
- * 
- * @param {actionData} actionData 
+ *
+ * @param {actionData} actionData
  */
 function recordAction(actionData) {
     actionHistory.push({ params: [], ...actionData });
@@ -27,12 +29,14 @@ function replayActionHistory() {
     const { getCommonActions } = require('./decoder/commonActions');
     const scenes = getScenes();
     const commonActions = getCommonActions();
+    setTurns(0);
 
     actionHistory.forEach(({ sceneName, actionKey, params }) => {
-        const action = sceneName ?
-            scenes[sceneName].actions[actionKey]
-            : commonActions[actionKey]
-        ;
+        const action = sceneName
+            ? scenes[sceneName].actions[actionKey]
+            : commonActions[actionKey];
+        incrementTurns();
+        // eslint-disable-next-line no-unused-expressions
         action && action(...params);
     });
 }
@@ -42,4 +46,4 @@ module.exports = {
     setActionHistory,
     recordAction,
     replayActionHistory,
-}
+};
