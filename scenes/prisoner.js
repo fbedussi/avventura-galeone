@@ -6,7 +6,7 @@ const { pick } = require('../decoder/pick');
 
 const prisoner = {
     name: 'prisoner',
-    shortDesc: `Sei prigioniero nella stiva di su un galeone pirata.`,
+    shortDesc: 'Sei prigioniero nella stiva di su un galeone pirata.',
     longDesc: `Una robustissima corda ti lega la vita ad un sudicio palo.
     L'odore degli escrementi è nauseante e lo squittire dei ratti non ti lascia dormire.  
     Da parecchie ore, forse un paio di giorni, non senti più le grida dei pirati e l'eco dei loro pesanti movimenti.
@@ -15,12 +15,12 @@ const prisoner = {
     E' il momento adatto per cercare di scappare.
     Peccato solo che tu stia morendo di fame!`,
     actions: {
-        n: () => `Non puoi muoverti, sei legato come un salame!`,
-        s: () => `Non puoi muoverti, sei legato come un salame!`,
-        e: () => `Non puoi muoverti, sei legato come un salame!`,
-        o: () => `Non puoi muoverti, sei legato come un salame!`,
-        u: () => `Non puoi muoverti, sei legato come un salame!`,
-        d: () => `Non puoi muoverti, sei legato come un salame!`,
+        n: () => 'Non puoi muoverti, sei legato come un salame!',
+        s: () => 'Non puoi muoverti, sei legato come un salame!',
+        e: () => 'Non puoi muoverti, sei legato come un salame!',
+        o: () => 'Non puoi muoverti, sei legato come un salame!',
+        u: () => 'Non puoi muoverti, sei legato come un salame!',
+        d: () => 'Non puoi muoverti, sei legato come un salame!',
         eat_cheese: () => {
             setLoose();
             return `La misera crosta placa a malapena i morsi della fame. 
@@ -41,7 +41,7 @@ const prisoner = {
                 id: 'cheese-prisoner',
                 carried: false,
             });
-            prisoner.shortDesc = `Questa è la cella in cui eri tenuto prigioniero.`;
+            prisoner.shortDesc = 'Questa è la cella in cui eri tenuto prigioniero.';
             prisoner.longDesc = `Al centro si erge ancora il sudicio palo a cui eri legato. 
             C'è sempre l'odore di escrementi e lo squittire di ratti, ma ora pensi a quelle bestioline con tenera gratitudine.`
             prisoner.actions = {
@@ -51,16 +51,16 @@ const prisoner = {
                         show: true,
                         pickable: true,
                     });
-                    return `Non si va da nessuna parte, però... guarda un po'! C'è un frammento di specchio`;
+                    return 'Non si va da nessuna parte, però... guarda un po\'! C\'è un frammento di specchio';
                 },
-                s: () => `Sbatti contro la lurida parete della cella.`,
+                s: () => 'Sbatti contro la lurida parete della cella.',
                 e: () => `Arrivi ad una pesante porta di metallo che ti sbarra la via. 
                 L'unica apertura è lo spioncino da cui i tuoi carcerieri ti passavano i tuoi magri pasti.`,
-                o: () => `Sbatti contro la lurida parete della cella.`,
-                u: () => `Provi a fare un salto, ma il soffitto è troppo alto da raggiungere. Ad ogni modo modo non sembra esserci nulla di interessante.`,
-                d: () => `Sei già nella stiva, più in basso di così c'è solo l'inifinità degli abissi!`,
+                o: () => 'Sbatti contro la lurida parete della cella.',
+                u: () => 'Provi a fare un salto, ma il soffitto è troppo alto da raggiungere. Ad ogni modo modo non sembra esserci nulla di interessante.',
+                d: () => 'Sei già nella stiva, più in basso di così c\'è solo l\'inifinità degli abissi!',
                 pick_mirror: (...args) => {
-                    prisoner.actions.n = () => `Sbatti contro la lurida parete della cella.`;
+                    prisoner.actions.n = () => 'Sbatti contro la lurida parete della cella.';
                     return pick(...args);
                 },
                 insert_mirror_peephole: () => prisoner.actions.use_mirror_peephole(),

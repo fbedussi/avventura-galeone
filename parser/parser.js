@@ -58,7 +58,7 @@ function parseInput(input) {
 		parsedInput: [
 			decodeTerm(rawVerb, verbTable),
 			decodeTerm(rawObject, objectTable),
-			decodeTerm(rawComplement, objectTable)
+            decodeTerm(rawComplement, objectTable),
 		],
 		rawInput,
 	};
