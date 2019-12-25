@@ -20,8 +20,10 @@ const sails = {
         use_knife_pirate: () => {
             incrementPointsBy(10);
             sails.actions.e = () => setCurrentScene('legs');
+            sails.longDesc = `Qui è dove i pirati ripongono le vele quando non sono utilizzate. 
+                La stanza è piena di cumoli di vele mal piegate, macchiate e mezze rosicchiate dai topi.`;
             setObject({
-                id: 'sails-piraterope-prisoner',
+                id: 'sails-pirate',
                 label: 'un feroce pirata stecchito',
                 description: 'Il pirata giace a terra con un coltello conficcato nel petto.',
             });
@@ -30,8 +32,10 @@ const sails = {
         use_leg_pirate: () => {
             incrementPointsBy(10);
             sails.actions.e = () => setCurrentScene('legs');
+            sails.longDesc = `Qui è dove i pirati ripongono le vele quando non sono utilizzate. 
+                La stanza è piena di cumoli di vele mal piegate, macchiate e mezze rosicchiate dai topi.`;
             setObject({
-                id: 'sails-piraterope-prisoner',
+                id: 'sails-pirate',
                 label: 'un feroce pirata stecchito',
                 description: 'Il pirata giace a terra con il cranio spaccato.',
             });

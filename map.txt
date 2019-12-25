@@ -9,7 +9,7 @@ stiva:
      /----------------------------------------------------------------
     /          |              |              |           |           |
    /             carcerirere    ferramenta   | corde     | uscita ^  |
-  /              - chiave       - coltelo    | - scala   |           |
+  /              - chiave       - coltello   | - scala   |           |
  /             |              |              |           |           |
 /  prigione    |--------------------    ---------    -----           |
 \  - specchio  |              |              |           |           |
@@ -29,7 +29,7 @@ Sottocoperta:
  / Cabina      |              |- pirati morti|           |           |
 /  Capitano    |--------------------  ------------  ------           |
 \  - Diario    |              |              |           |           |
- \             | Stanza       | scala ^      | Cambusa   |           | 
+ \ - serratura | Stanza       | scala ^      | Cambusa   |           | 
   \            | del tesoro   |              | - cibo    |           | 
    \           | - tesoro     |              |           |           |
     \          |              |              |           |           |
