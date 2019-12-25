@@ -9,6 +9,7 @@ const kitcken = {
         ...keelDefaultActions,
         s: () => setCurrentScene('galley'),
         o: () => setCurrentScene('dining'),
+        e: () => setCurrentScene('in1'),
     },
 };
 

@@ -23,6 +23,7 @@ const verbTable = {
     help: ['help', 'aiuto', 'h'],
     save: ['save', 'salva'],
     jump: ['salta', 'sali'],
+    door: ['porta'],
 };
 
 const objectTable = {

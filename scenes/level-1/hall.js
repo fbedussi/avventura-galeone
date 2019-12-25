@@ -6,7 +6,7 @@ const { leave } = require('../../decoder/pick');
 const hall = {
     name: 'hall',
     shortDesc: 'Sei in un\'anticamera.',
-    longDesc: 'C\'è solo una porta chiusa a chiave.',
+    longDesc: 'C\'è solo una porta chiusa a chiave. Sopra si può leggere, a caratteri sbiaditi, la scritta "capitano".',
     actions: {
         ...keelDefaultActions,
         e: () => setCurrentScene('dining'),

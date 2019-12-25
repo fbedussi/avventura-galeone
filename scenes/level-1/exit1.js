@@ -17,7 +17,7 @@ const exit1 = {
 
             return 'Complimenti sei uscito alla luce';
         },
-        n: () => setCurrentScene('kitcken'),
+        n: () => setCurrentScene('dining'),
     },
 };
 
