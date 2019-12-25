@@ -7,18 +7,17 @@ function listCurrentSceneObjects() {
     const currentScene = getCurrentScene();
 
     const currentSceneObjects = objects
-        .filter((object) =>
-            object.show
+        .filter((object) => object.show
             && object.location
             && object.location === currentScene.name);
 
     switch (currentSceneObjects.length) {
-        case 0:
-            return '';
-        case 1:
-            return `\nC'è ${currentSceneObjects[0].label}.`;
-        default:
-            return `\nCi sono: ${currentSceneObjects.map(o => o.label).join(', ')}.`;
+    case 0:
+        return '';
+    case 1:
+        return `\nC'è ${currentSceneObjects[0].label}.`;
+    default:
+        return `\nCi sono: ${currentSceneObjects.map((o) => o.label).join(', ')}.`;
     }
 }
 
@@ -28,23 +27,21 @@ function getObjects() {
 
 function getObject(termOrId) {
     const location = getCurrentScene();
-    return objects.find(object => (object.term === termOrId || object.id === termOrId) && (object.carried || object.location == location.name));
+    return objects.find((object) => (object.term === termOrId || object.id === termOrId) && (object.carried || object.location == location.name));
 }
 
 function playerHasObject(objectName) {
-    const object = getObject(objectName); 
+    const object = getObject(objectName);
     return object && object.carried;
 }
 
 function setObject(updatedObject) {
-    objects = objects.map((object) =>
-        object.id === updatedObject.id ?
-            {
-                ...object,
-                ...updatedObject,
-            }
-            : object
-    );
+    objects = objects.map((object) => (object.id === updatedObject.id
+        ? {
+            ...object,
+            ...updatedObject,
+        }
+        : object));
 }
 
 function setObjects(newObjects) {
@@ -69,4 +66,4 @@ module.exports = {
     getObjects,
     setObjects,
     canCarryMoreObjects,
-}
+};

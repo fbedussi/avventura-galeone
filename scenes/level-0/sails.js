@@ -1,8 +1,8 @@
-const { setCurrentScene } = require('./sceneManager');
-const keelDefaultActions = require('./keelDefaultActions');
-const { setLoose } = require('../ended');
-const { incrementPointsBy } = require('../points');
-const { setObject } = require('../objects/objectsManager');
+const { setCurrentScene } = require('../sceneManager');
+const keelDefaultActions = require('../keelDefaultActions');
+const { setLoose } = require('../../ended');
+const { incrementPointsBy } = require('../../points');
+const { setObject } = require('../../objects/objectsManager');
 
 const sails = {
     name: 'sails',

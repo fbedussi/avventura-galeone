@@ -1,7 +1,7 @@
-const { setCurrentScene } = require('./sceneManager');
-const { setObject, getObject } = require('../objects/objectsManager');
-const { pick } = require('../decoder/pick');
-const keelDefaultActions = require('./keelDefaultActions');
+const { setCurrentScene } = require('../sceneManager');
+const { setObject, getObject } = require('../../objects/objectsManager');
+const { pick } = require('../../decoder/pick');
+const keelDefaultActions = require('../keelDefaultActions');
 
 const prisoner = {
     name: 'jailer',

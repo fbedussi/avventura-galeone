@@ -1,8 +1,8 @@
-const { setCurrentScene } = require('./sceneManager');
-const { incrementPointsBy } = require('../points');
-const { setLoose } = require('../ended');
-const { setObject } = require('../objects/objectsManager');
-const { pick } = require('../decoder/pick');
+const { setCurrentScene } = require('../sceneManager');
+const { incrementPointsBy } = require('../../points');
+const { setLoose } = require('../../ended');
+const { setObject } = require('../../objects/objectsManager');
+const { pick } = require('../../decoder/pick');
 
 const prisoner = {
     name: 'prisoner',
@@ -26,7 +26,7 @@ const prisoner = {
             return `La misera crosta placa a malapena i morsi della fame. 
             Purtroppo però continui ad essere legato e non riesci a scappare.
             Il tuo destino è ormai segnato.
-            Passano lo ore, ritorna la fame che inesorabilmente ti porta alla morte.`
+            Passano lo ore, ritorna la fame che inesorabilmente ti porta alla morte.`;
         },
         spread_cheese_rope: () => prisoner.actions.use_cheese_rope(),
         use_cheese_rope: () => {
@@ -43,7 +43,7 @@ const prisoner = {
             });
             prisoner.shortDesc = 'Questa è la cella in cui eri tenuto prigioniero.';
             prisoner.longDesc = `Al centro si erge ancora il sudicio palo a cui eri legato. 
-            C'è sempre l'odore di escrementi e lo squittire di ratti, ma ora pensi a quelle bestioline con tenera gratitudine.`
+            C'è sempre l'odore di escrementi e lo squittire di ratti, ma ora pensi a quelle bestioline con tenera gratitudine.`;
             prisoner.actions = {
                 n: () => {
                     setObject({
@@ -73,7 +73,7 @@ const prisoner = {
                             prisoner.actions = {
                                 ...prisoner.actions,
                                 e: () => setCurrentScene('jailer'),
-                            }
+                            };
                             return `Infili la corda che ti teneva legato nello spioncino e riesci a tirare il chiavistello che chiude la porta.
                             Finalmente sei libero!`;
                         },
@@ -85,7 +85,7 @@ const prisoner = {
             };
             return `A malincuore rinunci a mangiare il ghiotto boccone e decidi invece di provare a spalmarlo sulle corde che ti tengono imprigionato.
             Uno dei topi che ti fanno compagnia nella misera cella si avvicina leccandosi i baffi e comincia a rosicchiare la corda. 
-            In pochi minuti sei libero!`
+            In pochi minuti sei libero!`;
         },
     },
 };

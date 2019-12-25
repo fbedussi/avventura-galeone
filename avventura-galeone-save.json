@@ -1,0 +1,535 @@
+{
+    "actionHistory": [
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "use",
+                        "cheese",
+                        "rope"
+                    ],
+                    "rawInput": [
+                        "u",
+                        "formaggio",
+                        "corda"
+                    ]
+                }
+            ],
+            "sceneName": "prisoner",
+            "actionKey": "use_cheese_rope"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "e",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "e"
+                    ]
+                }
+            ],
+            "sceneName": "prisoner",
+            "actionKey": "e"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "pick",
+                        "rope",
+                        null
+                    ],
+                    "rawInput": [
+                        "p",
+                        "corda"
+                    ]
+                }
+            ],
+            "sceneName": null,
+            "actionKey": "pick"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "o",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "o"
+                    ]
+                }
+            ],
+            "sceneName": "prisoner",
+            "actionKey": "o"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "n",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "n"
+                    ]
+                }
+            ],
+            "sceneName": "prisoner",
+            "actionKey": "n"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "pick",
+                        "mirror",
+                        null
+                    ],
+                    "rawInput": [
+                        "p",
+                        "specchio"
+                    ]
+                }
+            ],
+            "sceneName": "prisoner",
+            "actionKey": "pick_mirror"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "e",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "e"
+                    ]
+                }
+            ],
+            "sceneName": "prisoner",
+            "actionKey": "e"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "use",
+                        "mirror",
+                        "peephole"
+                    ],
+                    "rawInput": [
+                        "u",
+                        "specchio",
+                        "spioncino"
+                    ]
+                }
+            ],
+            "sceneName": "prisoner",
+            "actionKey": "use_mirror_peephole"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "use",
+                        "rope",
+                        "peephole"
+                    ],
+                    "rawInput": [
+                        "u",
+                        "corda",
+                        "spioncino"
+                    ]
+                }
+            ],
+            "sceneName": "prisoner",
+            "actionKey": "use_rope_peephole"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "e",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "e"
+                    ]
+                }
+            ],
+            "sceneName": "prisoner",
+            "actionKey": "e"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "watch",
+                        "jailer",
+                        null
+                    ],
+                    "rawInput": [
+                        "g",
+                        "carceriere"
+                    ]
+                }
+            ],
+            "sceneName": "jailer",
+            "actionKey": "watch_jailer"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "pick",
+                        "key",
+                        null
+                    ],
+                    "rawInput": [
+                        "p",
+                        "chiavi"
+                    ]
+                }
+            ],
+            "sceneName": "jailer",
+            "actionKey": "pick_key"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "e",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "e"
+                    ]
+                }
+            ],
+            "sceneName": "jailer",
+            "actionKey": "e"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "o",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "o"
+                    ]
+                }
+            ],
+            "sceneName": "hardware",
+            "actionKey": "o"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "e",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "e"
+                    ]
+                }
+            ],
+            "sceneName": "jailer",
+            "actionKey": "e"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "watch",
+                        "shelf",
+                        null
+                    ],
+                    "rawInput": [
+                        "g",
+                        "scaffale"
+                    ]
+                }
+            ],
+            "sceneName": "hardware",
+            "actionKey": "watch_shelf"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "pick",
+                        "knife",
+                        null
+                    ],
+                    "rawInput": [
+                        "p",
+                        "coltello"
+                    ]
+                }
+            ],
+            "sceneName": "hardware",
+            "actionKey": "pick_knife"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "s",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "s"
+                    ]
+                }
+            ],
+            "sceneName": "hardware",
+            "actionKey": "s"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "pick",
+                        "leg",
+                        null
+                    ],
+                    "rawInput": [
+                        "p",
+                        "gamba"
+                    ]
+                }
+            ],
+            "sceneName": null,
+            "actionKey": "pick"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "s",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "s"
+                    ]
+                }
+            ],
+            "sceneName": "legs",
+            "actionKey": "s"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "o",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "o"
+                    ]
+                }
+            ],
+            "sceneName": "legs",
+            "actionKey": "o"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "use",
+                        "knife",
+                        "pirate"
+                    ],
+                    "rawInput": [
+                        "usa",
+                        "coltello",
+                        "pirata"
+                    ]
+                }
+            ],
+            "sceneName": "sails",
+            "actionKey": "use_knife_pirate"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "o",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "o"
+                    ]
+                }
+            ],
+            "sceneName": "sails",
+            "actionKey": "o"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "e",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "e"
+                    ]
+                }
+            ],
+            "sceneName": "sails",
+            "actionKey": "e"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "e",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "e"
+                    ]
+                }
+            ],
+            "sceneName": "legs",
+            "actionKey": "e"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "pick",
+                        "coffer",
+                        null
+                    ],
+                    "rawInput": [
+                        "p",
+                        "forziere"
+                    ]
+                }
+            ],
+            "sceneName": "coffers",
+            "actionKey": "pick_coffer"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "n",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "n"
+                    ]
+                }
+            ],
+            "sceneName": "coffers",
+            "actionKey": "n"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "pick",
+                        "ladder",
+                        null
+                    ],
+                    "rawInput": [
+                        "p",
+                        "scala"
+                    ]
+                }
+            ],
+            "sceneName": "ropes",
+            "actionKey": "pick_ladder"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "s",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "s"
+                    ]
+                }
+            ],
+            "sceneName": "ropes",
+            "actionKey": "s"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "e",
+                        null,
+                        null
+                    ],
+                    "rawInput": [
+                        "e"
+                    ]
+                }
+            ],
+            "sceneName": "coffers",
+            "actionKey": "e"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "leave",
+                        "coffer",
+                        null
+                    ],
+                    "rawInput": [
+                        "lascia",
+                        "forziere"
+                    ]
+                }
+            ],
+            "sceneName": "exit0",
+            "actionKey": "leave_coffer"
+        },
+        {
+            "params": [
+                {
+                    "parsedInput": [
+                        "jump",
+                        "coffer",
+                        null
+                    ],
+                    "rawInput": [
+                        "salta",
+                        "forziere"
+                    ]
+                }
+            ],
+            "sceneName": "exit0",
+            "actionKey": "jump_coffer"
+        }
+    ]
+}

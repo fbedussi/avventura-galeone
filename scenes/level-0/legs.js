@@ -1,5 +1,5 @@
-const { setCurrentScene } = require('./sceneManager');
-const keelDefaultActions = require('./keelDefaultActions');
+const { setCurrentScene } = require('../sceneManager');
+const keelDefaultActions = require('../keelDefaultActions');
 
 const legs = {
     name: 'legs',

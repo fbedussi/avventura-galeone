@@ -1,5 +1,5 @@
-const { getCurrentScene } = require("../scenes/sceneManager");
-const { getObject, canCarryMoreObjects } = require("../objects/objectsManager");
+const { getCurrentScene } = require('../scenes/sceneManager');
+const { getObject, canCarryMoreObjects } = require('../objects/objectsManager');
 
 function pick({ parsedInput, rawInput }) {
     const currentLocation = getCurrentScene();
@@ -20,7 +20,7 @@ function pick({ parsedInput, rawInput }) {
     }
 
     if (!canCarryMoreObjects()) {
-        return `Sei già carico, per prendere ulteriori oggetti devi lasciare qualcosa`;
+        return 'Sei già carico, per prendere ulteriori oggetti devi lasciare qualcosa';
     }
 
     object.carried = true;
@@ -32,7 +32,7 @@ function pick({ parsedInput, rawInput }) {
 function leave({ parsedInput, rawInput }) {
     const currentLocation = getCurrentScene();
     const objectName = parsedInput[1];
-    const rawObjectName = rawInput[1];
+    const rawObjectName = rawInput && rawInput[1];
     const object = getObject(objectName);
 
     if (!object || !object.carried) {
@@ -49,4 +49,4 @@ function leave({ parsedInput, rawInput }) {
 module.exports = {
     pick,
     leave,
-}
+};

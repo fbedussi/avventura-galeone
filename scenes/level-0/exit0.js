@@ -1,9 +1,8 @@
-const { setCurrentScene } = require('./sceneManager');
-const { leave } = require('../decoder/pick');
-const { setWon } = require('../ended');
-const { end } = require('../end');
-const { incrementPointsBy } = require('../points');
-const keelDefaultActions = require('./keelDefaultActions');
+const { setCurrentScene } = require('../sceneManager');
+const { leave } = require('../../decoder/pick');
+const { incrementPointsBy } = require('../../points');
+const keelDefaultActions = require('../keelDefaultActions');
+const { setObject } = require('../../objects/objectsManager');
 
 const exit0 = {
     name: 'exit0',
@@ -22,12 +21,14 @@ const exit0 = {
 
                 exit0.actions.use_ladder = () => {
                     incrementPointsBy(10);
-                    exit0.actions.u = () => {
-                        incrementPointsBy(10);
-                        setWon();
-                        end();
-                    };
-                    leave({ rawInput: ['leave', 'ladder'], parsedInput: ['lascia', 'scala di corda'] });
+                    exit0.actions.u = () => `Sali la scala e finisci sottocoperta. 
+                    ${setCurrentScene('in1')}`;
+
+                    leave({ parsedInput: ['leave', 'ladder'] });
+                    setObject({
+                        id: 'hole-exit0',
+                        description: 'Probabilmente è il passaggio che permette di uscire dalla stiva. Ai bordi ci sono 2 ganci di ferro da cui pende una scala di corda.',
+                    });
 
                     return 'Riesci a lanciare la scala abbastanza in alto da agganciarla ai ganci. Puoi salire!';
                 };
