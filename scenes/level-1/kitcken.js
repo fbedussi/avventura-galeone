@@ -4,7 +4,8 @@ const keelDefaultActions = require('../keelDefaultActions');
 const kitcken = {
     name: 'kitcken',
     shortDesc: 'Sei nella cucina.',
-    longDesc: 'Da un lato c\'è la stufa che il cuoco di bordo usava per cucinare. Sopra ci sono le pentole e gli altri attrezzi di cucina.',
+    longDesc: `Qui il cuoco di bordo preparava i pasti per l\'equipaggio. 
+    Doveva essere un tipo preciso: tutto sembra pulito e ordinato, almeno per gli standard dei rudi pirati.`,
     actions: {
         ...keelDefaultActions,
         s: () => setCurrentScene('galley'),

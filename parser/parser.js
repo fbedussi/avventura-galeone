@@ -10,6 +10,7 @@ const verbTable = {
     u: ['alto', 'al'],
     d: ['basso', 'b'],
     eat: ['mangia', 'addenta', 'sgranocchia'],
+    drink: ['bevi'],
     use: ['usa', 'u'],
     insert: ['infila', 'inserisci', 'passa'],
     pick: ['raccogli', 'prendi', 'p'],
@@ -23,7 +24,6 @@ const verbTable = {
     help: ['help', 'aiuto', 'h'],
     save: ['save', 'salva'],
     jump: ['salta', 'sali'],
-    door: ['porta'],
 };
 
 const objectTable = {
@@ -45,6 +45,19 @@ const objectTable = {
     coffer: ['forziere'],
     hole: ['boccaporto'],
     ladder: ['scala'],
+    stove: ['stufa'],
+    oven: ['forno', 'forni'],
+    cooker: ['piastra'],
+    cookware: ['pentole', 'padelle', 'pentola', 'padella', 'attrezzi', 'coperchi', 'mestoli', 'cucchiai'],
+    barrels: ['barili', 'barile'],
+    meat: ['carne'],
+    carboys: ['damigiane', 'damigiana'],
+    wine: ['vino'],
+    water: ['acqua'],
+    boxes: ['scatole', 'scatola'],
+    cookies: ['gallette', 'biscotti', 'galletta', 'biscotto'],
+    goatskin: ['otri', 'otre'],
+
 };
 
 function decodeTerm(term = '', table) {

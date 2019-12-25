@@ -13,9 +13,10 @@ module.exports = [
     'sulle',
     'sulla',
     'sul',
-    'per', 
+    'per',
     'tra',
     'fra',
     'pezzi',
     'intorno',
+    'salata',
 ];
