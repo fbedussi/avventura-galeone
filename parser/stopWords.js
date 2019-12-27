@@ -19,4 +19,7 @@ module.exports = [
     'pezzi',
     'intorno',
     'salata',
+    'vecchie',
+    'nautiche',
+    'bordo',
 ];

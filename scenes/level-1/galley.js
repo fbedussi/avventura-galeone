@@ -17,7 +17,7 @@ const galley = {
             Dopo qualche minuto che sembra eterno muori.`;
         },
         drink_water: () => {
-            incrementPointsBy(10);
+            incrementPointsBy(30);
             return 'Bevi una lunga sorsata di acqua e finalmente calmi la sete che di affliggeva da giorni.';
         },
         eat_meat: () => {
@@ -29,7 +29,7 @@ const galley = {
             Dopo qualche minuto che sembra eterno muori.`;
         },
         eat_cookies: () => {
-            incrementPointsBy(10);
+            incrementPointsBy(30);
             return `Vincendo la ripugnanza addenti un paio di gallette, non prima di aver soffiato via i vermi che le infestano.
             Il sapore non è dei migliori, ma almeno calmi i morsi della fame, che ti affliggono da giorni`;
         },

@@ -30,9 +30,9 @@ Sottocoperta:
   |Capitano    |--------------------  ------------  ------                 \
   |- Diario    |              |              |           |                 /
   |- serratura | Stanza       | scala ^      | Cambusa   |                /
-  |            | del tesoro   |              | - cibo    |               / 
-  |            | - tesoro     |              |           |              /
-  |            |              |              |           |             /
+  |            |  del tesoro   |              | - cibo    |               / 
+  |-----   ----| - tesoro     |              |           |              /
+  |                           |              |           |             /
   |-------------------------------------------------------------------/
 
 

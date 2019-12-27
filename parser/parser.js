@@ -24,6 +24,11 @@ const verbTable = {
     help: ['help', 'aiuto', 'h'],
     save: ['save', 'salva'],
     jump: ['salta', 'sali'],
+    open: ['sfoglia', 'apri'],
+    read: ['leggi'],
+    pull: ['solleva', 'tira', 'togli', 'sposta', 'gira'],
+    chest: ['scrigno'],
+    sit: ['siedi', 'siediti'],
 };
 
 const objectTable = {
@@ -34,6 +39,7 @@ const objectTable = {
     mirror: ['specchio', 'frammento di specchio'],
     jailer: ['carceriere', 'secondino', 'pirata'],
     pirate: ['pirata', 'corsaro', 'bucaniere'],
+    pirates: ['pirata', 'pirati'],
     key: ['chiave', 'chiavi'],
     knife: ['coltello'],
     shelf: ['scaffale'],
@@ -57,7 +63,19 @@ const objectTable = {
     boxes: ['scatole', 'scatola'],
     cookies: ['gallette', 'biscotti', 'galletta', 'biscotto'],
     goatskin: ['otri', 'otre'],
-
+    food: ['cibo', 'viveri'],
+    chairs: ['sedie', 'seida'],
+    table: ['tavolo', 'tavola', 'tavolaccio'],
+    window: ['finestra', 'finestre', 'vetrata'],
+    sofa: ['divano', 'sofà'],
+    desk: ['scrivania', 'scrittoio'],
+    prints: ['stampe', 'quadri'],
+    maps: ['carte'],
+    log: ['diario'],
+    third: ['terza'],
+    wallhole: ['vano'],
+    handle: ['maniglia'],
+    chest: ['scrigno'],
 };
 
 function decodeTerm(term = '', table) {

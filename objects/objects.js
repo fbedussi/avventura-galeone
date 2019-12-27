@@ -185,6 +185,13 @@ const objects = [
         show: true,
     },
     {
+        term: 'food',
+        location: 'galley',
+        id: 'galley-food',
+        label: 'cibo',
+        description: 'questa è la cambusa, c\'è un sacco di roba da mangiare, prova a guardarti attorno',
+    },
+    {
         term: 'meat',
         location: 'galley',
         id: 'galley-meat',
@@ -239,6 +246,125 @@ const objects = [
         label: 'acqua',
         description: '',
         actions: ['drink'],
+    },
+    {
+        term: 'pirates',
+        location: 'dining',
+        id: 'dining-pirates',
+        label: 'pirati',
+        description: `Sono tutti morti, diversi hanno ancora in mano i coltellacci che stavano usando per mangiare. 
+        Una bava marrone gli esce dalla bocca.
+        Sembrerebbe proprio che qualcosa li abbia uccisi mentre stavano mangiando... forse dopotutto il cuoco di bordo non era così bravo...`,
+    },
+    {
+        term: 'table',
+        location: 'dining',
+        id: 'dining-table',
+        label: 'tavolo',
+        description: `È una lurida e rozza tavolaccia di legno unto e consunto.
+        Sopra ci sono de bicchieri mezzi pieni di vino (o mezzi vuoti, dipende dai punti di vista).
+        Al centro c'è un piatto con resti di carne salata.`,
+    },
+    {
+        term: 'chairs',
+        location: 'dining',
+        id: 'dining-chairs',
+        label: 'sedie',
+        description: 'Più che di vere e proprie sedie si tratta di panche e sgabelli.',
+    },
+    {
+        term: 'door',
+        location: 'hall',
+        id: 'hall-door',
+        label: 'una porta chiusa',
+        description: 'Sopra si può leggere, a caratteri sbiaditi, la scritta "capitano".',
+    },
+    {
+        term: 'window',
+        location: 'captain',
+        id: 'captain-window',
+        label: 'una ampia vetrata',
+        description: `La vetrata dà sulla poppa della nave, da qui puoi vedere la scia bianca che la nave lascia dietro di se. 
+        Oltre a quella non c'è null'altro che l'immensità del mare.`,
+    },
+    {
+        term: 'sofa',
+        location: 'captain',
+        id: 'captain-sofa',
+        label: 'un vecchio divano',
+        description: 'È un divano semicircolare che circonda un tavolo. Non è ben messo: la stoffa è piena di strappi da cui escono brandelli di imbottitura.',
+        actions: ['sit'],
+    },
+    {
+        term: 'desk',
+        location: 'captain',
+        id: 'captain-desk',
+        label: 'la scrivania del capitano',
+        description: 'Sopra ci sono sparse alcune vecchie carte nautiche e il diario di bordo.',
+    },
+    {
+        term: 'desk',
+        location: 'captain',
+        id: 'captain-desk',
+        label: 'la scrivania del capitano',
+        description: 'Sopra ci sono sparse alcune vecchie carte nautiche e il diario di bordo.',
+    },
+    {
+        term: 'maps',
+        location: 'captain',
+        id: 'captain-maps',
+        label: 'alcune vecchie carte nautiche',
+        description: 'Su una puoi vedere l\'ultima posizione segnata dal capitano, la nave è nel mare aperto, attorno c\'è solo una piccola isola dalla forma stretta e lunga.',
+    },
+    {
+        term: 'log',
+        location: 'captain',
+        id: 'captain-log',
+        label: 'il diario di bordo',
+        description: 'È il diario su cui il capitano segnava gli eventi salienti occorsi durante la navigazione.',
+    },
+    {
+        term: 'prints',
+        location: 'captain',
+        id: 'captain-prints',
+        label: 'alcune vecchie stampe marinare',
+        description: `Sono tre stampe che illustrano diversi momenti di vita di mare. 
+        Nella prima è raffigurato il ponte di una nave ingombro di merci.
+        Nella seconda un mare in tempesta e un vascello che combatte con le alte onde.
+        Nella terza il mare è calmo e lo stesso vascello naviga verso il porto.`,
+    },
+    {
+        term: 'third',
+        location: 'captain',
+        id: 'captain-third',
+        label: 'la terza stampa',
+        description: 'Il mare è calmo, la tempesta è passata e un arcobaleno attraversa l\'orizzonte.',
+        actions: ['pull'],
+    },
+    {
+        term: 'handle',
+        location: 'captain',
+        id: 'captain-handle',
+        label: 'una piccola maniglia',
+        description: 'È una piccola maniglia incassata in un vano nascosto dietro la stampa.',
+        actionable: false,
+    },
+    {
+        term: 'wallhole',
+        location: 'captain',
+        id: 'captain-wallhole',
+        label: 'una piccolo vano',
+        description: 'È una piccolo vano nascosto dietro la stampa, sul fondo c\'è una maniglia.',
+        actionable: false,
+    },
+    {
+        term: 'chest',
+        location: 'treasure',
+        id: 'treasure-chest',
+        label: 'una piccolo scrigno',
+        description: `È una piccolo scrigno ricoperto di lamine d'oro e pietre preziose.
+        Non vorrei sbagliare, ma sembra proprio contenere un tesoro.
+        Che sia quello del famoso Capitano Bill di cui narrano le leggende di questi mari?`,
     },
 ];
 // Ci sono barili di carne salata, damigiane di vino, scatole di gallette e otri piene d\'acqua.

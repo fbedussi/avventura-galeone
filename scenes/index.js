@@ -13,6 +13,7 @@ const galley = require('./level-1/galley');
 const hall = require('./level-1/hall');
 const in1 = require('./level-1/in1');
 const kitcken = require('./level-1/kitcken');
+const treasure = require('./level-1/treasure');
 
 module.exports = {
     prisoner,
@@ -30,4 +31,5 @@ module.exports = {
     hall,
     in1,
     kitcken,
+    treasure,
 };
